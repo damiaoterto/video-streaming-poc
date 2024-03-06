@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #0f0e0f;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .video-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .video-box video {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+  <title>Video Streaming Poc</title>
+</head>
+<body>
+  <div class="container">
+    <div class="video-box">
+      <video controls autoplay>
+        <source src="http://localhost:3000" type="video/mp4" >
+      </video>
+    </div>
+  </div>
+</body>
+</html>
