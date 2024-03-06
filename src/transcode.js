@@ -1,5 +1,6 @@
 const { createReadStream } = require('node:fs')
 const { spawn } = require('node:child_process')
+const ffmpegPath = require('ffmpeg-static')
 
 const transcode = (path) => {
   const ffmpegArgs = [
@@ -15,7 +16,9 @@ const transcode = (path) => {
     'pipe:1',
   ]
 
-  const ffmpegProcess = spawn('ffmpeg', ffmpegArgs, {
+  const ffmpegExecutable = ffmpegPath || 'ffmpeg'
+
+  const ffmpegProcess = spawn(ffmpegExecutable, ffmpegArgs, {
     stdio: ['pipe', 'pipe', 'pipe']
   })
 
@@ -24,6 +27,7 @@ const transcode = (path) => {
   ffmpegProcess.stderr.on('data', (msg) => console.error(msg.toString()));
 
   const stream = () => ffmpegProcess.stdout
+
   const close = () => {
     ffmpegProcess.stdin.destroy()
     ffmpegProcess.stdout.destroy()
