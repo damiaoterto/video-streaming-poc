@@ -1,0 +1,11 @@
+{
+  "name": "video-streaming-poc",
+  "version": "1.0.0",
+  "description": "PoC to video call server",
+  "author": "Francisco Damião Terto <contato@damiaoterto.dev>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
