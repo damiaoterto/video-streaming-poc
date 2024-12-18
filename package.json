@@ -5,7 +5,9 @@
   "author": "Francisco Damião Terto <contato@damiaoterto.dev>",
   "license": "MIT",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "node ./src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
